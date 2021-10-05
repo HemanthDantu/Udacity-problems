@@ -81,6 +81,42 @@ public class LinkedList {
 			list.head = null;
 		return result;
 	}
+	
+//	#   Insert data at some position in the list
+	//Insert value at pos position in the list. If pos is larger than the
+    //length of the list, append to the end of the list.
+	
+	public static void insertAtPosition(LinkedList list, int val, int pos) {
+		Node currNode = list.head;
+		int currPos = 1;
+		
+		while(currNode.next!=null && currPos != (pos-1)) {
+			currNode = currNode.next;
+			currPos++;
+		}
+		
+		if(currNode.next!=null) {
+			Node temp = currNode.next;
+			currNode.next = new Node(val);
+			currNode.next.next = temp;
+		}
+		else {
+			System.out.println("entered else");
+			currNode.next = new Node(val);
+		}
+	}
+	
+//	#   Return the size (length) of the linked list
+	
+	public static int lengthOfLinkedList(LinkedList list) {
+		int length = 0;
+		Node currNode = list.head;
+		while(currNode!=null) {
+			length++;
+			currNode = currNode.next;
+		}
+		return length;
+	}
 
 	public static void main(String args[]) {
 		LinkedList list = new LinkedList();
@@ -103,20 +139,33 @@ public class LinkedList {
 //		removeNode(list, 25);
 //		printList(list);
 //		
-		System.out.println(pop(list));
+//		System.out.println(pop(list));
+//		printList(list);
+//		System.out.println(pop(list));
+//		printList(list);
+//		System.out.println(pop(list));
+//		printList(list);
+//		System.out.println(pop(list));
+//		printList(list);
+//		System.out.println(pop(list));
+//		printList(list);
+//		System.out.println(pop(list));
+//		printList(list);
+//		System.out.println(pop(list));
+//		printList(list);
+		
+//		insertAtPosition(list, 3, 3);
+//		System.out.println("Insert 3 a position 3: ");
+//		printList(list);
+		
+		insertAtPosition(list, 3, 10);
+		System.out.println("Insert 3 a position 10: ");
 		printList(list);
-		System.out.println(pop(list));
-		printList(list);
-		System.out.println(pop(list));
-		printList(list);
-		System.out.println(pop(list));
-		printList(list);
-		System.out.println(pop(list));
-		printList(list);
-		System.out.println(pop(list));
-		printList(list);
-		System.out.println(pop(list));
-		printList(list);
+		
+		
+//		printList(list);
+		System.out.println("Length of list "+ lengthOfLinkedList(list));
+		
 
 	}
 
