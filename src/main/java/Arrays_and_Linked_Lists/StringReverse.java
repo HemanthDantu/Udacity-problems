@@ -13,8 +13,9 @@ public class StringReverse {
 
 		System.out.println("All the best : " + reverseWordsInString("All the best"));
 		System.out.println("A1l?l !th5e :be@st : " + reverseWordsInString("A1l?l !th5e :be@st"));
-		
-		System.out.println("s1 : geeksforgeeks, s2 : geeksforgeeks :" + hammingDistance("geeksforgeeks", "geeksandgeeks"));
+
+		System.out.println(
+				"s1 : geeksforgeeks, s2 : geeksforgeeks :" + hammingDistance("geeksforgeeks", "geeksandgeeks"));
 		System.out.println("s1 : ACTTGACCGGG, s2 : GATCCGGTACA : " + hammingDistance("ACTTGACCGGG", "GATCCGGTACA"));
 
 	}
@@ -98,17 +99,17 @@ public class StringReverse {
 //			Output : 2
 //			Explanation : The corresponding character mismatch are highlighted.
 //			"1011101" and "1001001"
-	
+
 	private static int hammingDistance(String s1, String s2) {
-		if(s1.length()!=s2.length())
+		if (s1.length() != s2.length())
 			return 0;
 		int result = 0;
-		
-		for(int i=0; i<s1.length();i++) {
-			if(s1.charAt(i)!=s2.charAt(i))
+
+		for (int i = 0; i < s1.length(); i++) {
+			if (s1.charAt(i) != s2.charAt(i))
 				result++;
 		}
-		
+
 		return result;
 	}
 
